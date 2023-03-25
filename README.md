@@ -1,70 +1,89 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Live](https://product-tracker.netlify.app/).
 
-## Available Scripts
+## Solidity code
 
-In the project directory, you can run:
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
 
-### `npm start`
+// Define a contract for tracking the movement of agricultural products
+contract AgriculturalProductTracking {
+    // Define a struct to represent an agricultural product
+    struct AgriculturalProduct {
+        uint id;                 // Unique ID of the product
+        string name;             // Name of the product
+        address producer;        // Address of the producer
+        string PSellPrice;       // Producer's selling price
+        address processor;       // Address of the processor
+        string PrSellPrice;      // Processor's selling price
+        address transporter;     // Address of the transporter
+        string TSellPrice;       // Transporter Selling Price
+        address distributor;     // Address of the distributor
+        string DsSellPrice;      // Distributor's selling price
+        address retailer;        // Address of the retailer
+        string RSellPrice;       // Retailer's selling price
+        address consumer;        // Address of the consumer
+        uint timestamp;          // Timestamp of the transaction
+        string location;         // Location of the product
+        string status;           // Status of the product
+    }
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+    // Define a mapping to store the agricultural products
+    mapping(uint => AgriculturalProduct) public products;
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+    // Define a function to add a new agricultural product to the mapping
+    function addProduct(uint id, string memory name, address producer, string memory PSellPrice) public {
+        require(products[id].id == 0, "Product with this ID already exists");
+        AgriculturalProduct memory newProduct = AgriculturalProduct(id, name, producer, PSellPrice, address(0), "", address(0), "", address(0), "", address(0), "", address(0), block.timestamp, "", "");
+        products[id] = newProduct;
+    }
 
-### `npm test`
+    // Define a function to update the processor of an agricultural product
+    function updateProcessor(uint id, address processor, string memory PrSellPrice) public {
+        require(products[id].id != 0, "Product with this ID does not exist");
+        AgriculturalProduct storage product = products[id];
+        product.processor = processor;
+        product.PrSellPrice = PrSellPrice;
+        product.timestamp = block.timestamp;
+    }
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+    // Define a function to update the transporter of an agricultural product
+    function updateTransporter(uint id, address transporter, string memory TSellPrice) public {
+        require(products[id].id != 0, "Product with this ID does not exist");
+        AgriculturalProduct storage product = products[id];
+        product.transporter = transporter;
+        product.TSellPrice = TSellPrice;
+        product.timestamp = block.timestamp;
+    }
 
-### `npm run build`
+    // Define a function to update the distributor of an agricultural product
+    function updateDistributor(uint id, address distributor, string memory DsSellPrice) public {
+        require(products[id].id != 0, "Product with this ID does not exist");
+        AgriculturalProduct storage product = products[id];
+        product.distributor = distributor;
+        product.DsSellPrice = DsSellPrice;
+        product.timestamp = block.timestamp;
+    }
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    // Define a function to update the retailer of an agricultural product
+    function updateRetailer(uint id, address retailer, string memory RSellPrice) public {
+        require(products[id].id != 0, "Product with this ID does not exist");
+        AgriculturalProduct storage product = products[id];
+        product.retailer = retailer;
+        product.RSellPrice = RSellPrice;
+        product.timestamp = block.timestamp;
+    }
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+    // Define a function to update the consumer of an agricultural product
+    function updateConsumer(uint id, address consumer, address processor, address distributor, string memory location, string memory status) public {
+    require(products[id].id != 0, "Product with this ID does not exist");
+    AgriculturalProduct storage product = products[id];
+    product.consumer = consumer;
+    product.processor = processor;
+    product.distributor = distributor;
+    product.location = location;
+    product.status = status;
+    product.timestamp = block.timestamp;
+}
+}
