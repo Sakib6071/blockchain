@@ -1,0 +1,111 @@
+
+
+[
+
+    {
+        "id": "rice-cum-101",
+
+        "productName": "Miniket Rice",
+        "producerName": "Rohmot Ali",
+        "producerAddress": "0x5B38Da6a701c568545d",
+        "producerSellingPrice": 700,
+        "producerSellingDate": "15 august 2022",
+        "placeAddress": "Cumilla",
+
+
+        "processorAddress": "0xAb8483F64d9C6d1Ec",
+        "processorSellingPrice": 800,
+        "processorProcessingCost":50,
+
+        "transporterAddress": "0x4B20993Bc481177e",
+        "transporterSellingPrice": 900,
+        "transportRoute":"Cumilla To Dhaka",
+        "transportDistance":70,
+        "transportCost":80,
+
+        "distributorAddress": "0x78731D3Ca6b7E34aC",
+        "distributorSellingPrice": 950,
+        "distributionCost":30,
+
+        "retailerAddress": "0x17F6AD8Ef982eF",
+        "retailerSellingPrice": 1000,
+
+
+        "photo": "https://i.ibb.co/cYrwts0/sandy-ravaloniaina-r-ARwqh9-IXEE-unsplash.jpg"
+
+    },
+    {
+        "id": "mang-raj-101",
+
+        "productName": "Fazlee Mango",
+        "producerName": "Shahir Hossen",
+        "producerAddress": "0x5B38Da6a701c568545d",
+        "producerSellingPrice": 2000,
+        "producerSellingDate": "20 july 2022",
+        "placeAddress": "Rajshahi",
+
+
+        "processorAddress": "0xAb8483F64d9C6d1Ec",
+        "processorSellingPrice": 2100,
+        "processorProcessingCost":50,
+
+
+        "transporterAddress": "0x4B20993Bc481177e",
+        "transporterSellingPrice": 2200,
+        "transportRoute":"Rajshahi To Dhaka",
+        "transportDistance":220,
+        "transportCost":80,
+
+        "distributorAddress": "0x78731D3Ca6b7E34aC",
+        "distributorSellingPrice": 2250,
+        "distributionCost":30,
+
+        "retailerAddress": "0x17F6AD8Ef982eF",
+        "retailerSellingPrice": 2300,
+
+
+        "photo": "https://i.ibb.co/F859SZ9/jametlene-reskp-pvugc-Xp-BBJ0-unsplash.jpg"
+
+    },
+    {
+        "id": "fish-chad-101",
+
+        "productName": "Hilsha Fish",
+        "producerName": "Mohiuddin",
+        "producerAddress": "0x5B38Da6a701c568545d",
+        "producerSellingPrice": 750,
+        "producerSellingDate": "14 September 2022",
+        "placeAddress": "Chadpur",
+
+
+        "processorAddress": "0xAb8483F64d9C6d1Ec",
+        "processorSellingPrice": 800,
+        "processorProcessingCost":30,
+
+        "transporterAddress": "0x4B20993Bc481177e",
+        "transporterSellingPrice": 880,
+        "transportRoute":"Chadpur To Dhaka",
+        "transportDistance":80,
+        "transportCost":60,
+
+        "distributorAddress": "0x78731D3Ca6b7E34aC",
+        "distributorSellingPrice": 950,
+        "distributionCost":30,
+
+        "retailerAddress": "0x17F6AD8Ef982eF",
+        "retailerSellingPrice": 1000,
+
+
+        "photo": "https://i.ibb.co/hc2MnBP/BHilsa123.jpg"
+
+    }
+
+
+
+
+
+
+
+
+
+]
