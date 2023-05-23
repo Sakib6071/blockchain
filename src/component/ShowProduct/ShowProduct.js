@@ -49,8 +49,10 @@ const ShowProduct = () => {
                 <p className='text-xl'><b>Selling Price :</b> {specificProduct?.retailerSellingPrice} TK</p>
                 <p className='text-xl'><b>Profit :</b> {(specificProduct?.retailerSellingPrice)-(specificProduct?.distributorSellingPrice)} TK</p>
             </div>
-            <div className='order-1 lg:order-2 flex justify-center items-center'>
-                <img className='rounded-lg border-2 border-green-700' src={specificProduct?.photo} alt="" />
+            <div className='order-1 lg:order-2 grid grid-cols-1 my-5 gap-y-2'>
+                <img className='order-2 block rounded-lg border-2 border-green-700' src={specificProduct?.photo} alt="" />
+                <img className='order-1 block rounded-lg border-2 border-green-700' src={`https://i.ibb.co/PjcFRDj/map.jpg`} alt="" />
+                
             </div>
             
         </div> : <div><p className='text-red-500 text-center text-3xl'>Item not exist</p></div>
