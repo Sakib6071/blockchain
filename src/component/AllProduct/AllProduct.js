@@ -5,7 +5,8 @@ const AllProduct = () => {
     const{al}=useParams()
     console.log(al);
     return (
-        <div className='absolute top-0 '>
+        
+        <div className='mx-5 my-3 rounded-lg border-4 border-blue-800'>
             <img src={`https://i.ibb.co/pbHT58F/map-1.jpg`} alt="" />
         </div>
     );
